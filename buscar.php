@@ -65,7 +65,7 @@
         <select id="variable" name="variable" disabled></select>
 
         <label for="valor">Valor:</label>
-        <input type="submit" value="Buscar">
+        <input type="text" id="valor" name="valor">
 
         <input type="submit" value="Buscar">
     </form>
