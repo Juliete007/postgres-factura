@@ -53,12 +53,11 @@
             echo "Error en la consulta";
             exit;
         }
-    
+        echo "<tr><th>Númerod de la factura</th><th>Número de linia de la factura</th><th>Código de artículo</th><th>Cantidad</th><th>Precio</th><th>Descuento</th></tr>";
         // Procesa los resultados y muestra los datos
         while ($row = pg_fetch_assoc($result)) {
             // Aquí puedes mostrar los datos de cada fila como desees
-            echo "ID: " . $row["id"] . "<br>";
-            echo "Nombre: " . $row["nombre"] . "<br>";
+            echo "<tr><td>" . $row["num_f"] . "</td><td>" . $row["num_l"] . "</td><td>" . $row["cod_a"] . "</td><td>" . $row["quant"] . "</td><td>" . $row["preu"] . "</td><td>" . $row["dte"] . "</td></tr>";
             // ... continúa con otras columnas ...
         }
     
