@@ -100,7 +100,7 @@
         // Cierra la tabla HTML
         echo "</table>";
         echo "</div>";
-        echo "<button id='export-button'><img src='spreadsheet.png' alt='logo-spreadsheet'></button>";
+        echo "<button id='export-button'><img src='spreadsheet.png' alt='logo-spreadsheet'>Excel</button>";
         // Liberar recursos y cerrar la conexión
         pg_free_result($result);
         pg_close($conn);
