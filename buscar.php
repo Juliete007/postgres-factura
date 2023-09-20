@@ -100,7 +100,7 @@
         // Cierra la tabla HTML
         echo "</table>";
         echo "</div>";
-        echo "<div class='boton-css'>"
+        echo "<div class='boton-css'>";
         echo "<button id='export-button'><img src='spreadsheet.png' alt='logo-spreadsheet'>Excel</button>";
         echo "</div>";
         // Liberar recursos y cerrar la conexión
