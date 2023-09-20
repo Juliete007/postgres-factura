@@ -31,7 +31,7 @@
     <h1>Consulta de Tablas y Variables</h1>
     <?php
     // Conexión a la base de datos PostgreSQL
-    $conn = pg_connect("host=bnk6mxyzwg04dorrxsyk-postgresql.services.clever-cloud.com, dbname=bnk6mxyzwg04dorrxsyk, user=ughuuywkcfgjimu2goew, password=yyXzddi5XIINcOBBpVCQxOCz2Wlvc0");
+    $conn = pg_connect("host=bnk6mxyzwg04dorrxsyk-postgresql.services.clever-cloud.com dbname=bnk6mxyzwg04dorrxsyk user=ughuuywkcfgjimu2goew password=yyXzddi5XIINcOBBpVCQxOCz2Wlvc0");
 
     if (!$conn) {
         echo "<h1>Error: No se pudo conectar a la base de datos</h1>";
