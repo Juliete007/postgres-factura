@@ -133,17 +133,13 @@
         <input type="submit" value="Buscar">
     </form>
     <script>
-    document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("export-button").addEventListener("click", function () {
         // Obtiene la tabla
         const table = document.querySelector("table");
 
-        // Combina las variables para formar el nombre del archivo
-        const fileName = `${<?php echo $tabla; ?>}_${<?php echo $variable; ?>}.xlsx`;
-
         // Crea un objeto Blob con los datos de la tabla
         const blob = new Blob([table.outerHTML], {
-            type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8",
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8",
         });
 
         // Crea un objeto URL a partir del Blob
@@ -152,7 +148,7 @@
         // Crea un enlace de descarga
         const a = document.createElement("a");
         a.href = url;
-        a.download = fileName; // Establece el nombre del archivo
+        a.download = "tabla_excel.xlsx"; // Nombre del archivo Excel
         document.body.appendChild(a);
 
         // Simula un clic en el enlace para descargar el archivo
@@ -162,8 +158,6 @@
         URL.revokeObjectURL(url);
         document.body.removeChild(a);
         });
-    });
     </script>
-
 </body>
 </html>
