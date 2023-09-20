@@ -61,6 +61,16 @@
 
     <!-- Agrega un formulario para ingresar el Código de Población -->
     <form method="POST" action="buscar.php">
+        <select>
+            <option value="article">Artículo</option>
+            <option value="categoria">Categoría</option>
+            <option value="client">Cliente</option>
+            <option value="factura">Factura</option>
+            <option value="linia_fac">Línia de la factura</option>
+            <option value="poble">Pueblo</option>
+            <option value="provincia">Provincia</option>
+            <option value="venedor">Vendedor</option>
+        </select>
         <label for="cod_pob">Código de la población:</label>
         <input type="text" name="cod_pob" id="cod_pob" required>
         <input type="submit" value="Buscar">
