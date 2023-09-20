@@ -51,29 +51,29 @@
     
         if (!$result) {
             echo "<h1>Error en la consulta</h1>";
-            echo "<form action="buscar.php" method="post">";
-            echo "<label for="tabla">Selecciona una tabla:</label>";
-            echo "<select id="tabla" name="tabla">";
-            echo "<option value="article">Artículo</option>";
-            echo "<option value="categoria">Categoría</option>";
-            echo "<option value="client">Cliente</option>";
-            echo "<option value="factura">Factura</option>";
-            echo "<option value="linia_fac">Línea de la factura</option>";
-            echo "<option value="poble">Pueblo</option>";
-            echo "<option value="provincia">Provincia</option>";
-            echo "<option value="venedor">Vendedor</option>";
+            echo "<form action='buscar.php' method='post'>";
+            echo "<label for='tabla'>Selecciona una tabla:</label>";
+            echo "<select id='tabla' name='tabla'>";
+            echo "<option value='article'>Artículo</option>";
+            echo "<option value='categoria'>Categoría</option>";
+            echo "<option value='client'>Cliente</option>";
+            echo "<option value='factura'>Factura</option>";
+            echo "<option value='linia_fac'>Línea de la factura</option>";
+            echo "<option value='poble'>Pueblo</option>";
+            echo "<option value='provincia'>Provincia</option>";
+            echo "<option value='venedor'>Vendedor</option>";
             echo "</select>";
-
-            echo "<label for="variable">Selecciona una variable:</label>";
-            echo "<select id="variable" name="variable" disabled></select>";
-
-            echo "<label for="valor">Valor:</label>";
-            echo "<input type="text" id="valor" name="valor">";
-
-            echo "<input type="submit" value="Buscar">";
+        
+            echo "<label for='variable'>Selecciona una variable:</label>";
+            echo "<select id='variable' name='variable' disabled></select>";
+        
+            echo "<label for='valor'>Valor:</label>";
+            echo "<input type='text' id='valor' name='valor'>";
+        
+            echo "<input type='submit' value='Buscar'>";
             echo "</form>";
             exit;
-        }
+        }        
 
         // Comienza la tabla HTML
         echo "<table border='1'>";
