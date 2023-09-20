@@ -47,6 +47,13 @@
 
     // Devolver las opciones como respuesta AJAX
     echo $options;
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Recoger los datos del formulario
+        $tabla = $_POST["tabla"];
+        $variable = $_POST["variable"];
+        $valor = $_POST["valor"];
+        }
     ?>
 
 
