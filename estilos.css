@@ -61,10 +61,10 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-#export-button {
-    text-align: center;
-    vertical-align: middle;
-}
+.boton-css{
+    display: flex;
+    justify-content: center;
+  }
 
 #export-button img {
     width: 100px; /* Ajusta el tamaño a tu preferencia */
