@@ -51,7 +51,7 @@
 
 
     <!-- Agrega un formulario para ingresar el Código de Población -->
-    <form action="consulta.php" method="post">
+    <form action="buscar.php" method="post">
         <label for="tabla">Selecciona una tabla:</label>
         <select id="tabla" name="tabla">
             <option value="article">Artículo</option>
