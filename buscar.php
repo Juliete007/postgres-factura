@@ -6,6 +6,26 @@
     <link rel="stylesheet" type="text/css" href="estilos.css">
     <title>Consulta de Tablas y Variables</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Cuando cambie la selección de la tabla
+            $('#tabla').change(function () {
+                var tablaSeleccionada = $(this).val();
+
+                // Hacer una solicitud AJAX para obtener las variables de la tabla
+                $.ajax({
+                    url: 'get_variables.php',
+                    type: 'POST',
+                    data: { tabla: tablaSeleccionada },
+                    success: function (response) {
+                        // Llenar el desplegable de variables con la respuesta
+                        $('#variable').html(response);
+                        $('#variable').prop('disabled', false);
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <h1>Consulta de Tablas y Variables</h1>
@@ -72,35 +92,12 @@
         </select>
 
         <label for="variable">Selecciona una variable:</label>
-        <select id="variable" name="variable">
-            <script>
-            $(document).ready(function () {
-                // Cuando cambie la selección de la tabla
-                $('#tabla').change(function () {
-                    var tablaSeleccionada = $(this).val();
-
-                    // Hacer una solicitud AJAX para obtener las variables de la tabla
-                    $.ajax({
-                        url: 'get_variables.php',
-                        type: 'POST',
-                        data: { tabla: tablaSeleccionada },
-                        success: function (response) {
-                            // Llenar el desplegable de variables con la respuesta
-                            $('#variable').html(response);
-                            $('#variable').prop('disabled', false);
-                        }
-                    });
-                });
-            });
-        </script>
-        </select>
+        <select id="variable" name="variable" disabled></select>
 
         <label for="valor">Valor:</label>
         <input type="text" id="valor" name="valor">
 
         <input type="submit" value="Buscar">
     </form>
-
-    
 </body>
 </html>
