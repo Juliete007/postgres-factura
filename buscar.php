@@ -72,7 +72,28 @@
         </select>
 
         <label for="variable">Selecciona una variable:</label>
-        <select id="variable" name="variable" disabled></select>
+        <select id="variable" name="variable">
+            <script>
+            $(document).ready(function () {
+                // Cuando cambie la selección de la tabla
+                $('#tabla').change(function () {
+                    var tablaSeleccionada = $(this).val();
+
+                    // Hacer una solicitud AJAX para obtener las variables de la tabla
+                    $.ajax({
+                        url: 'get_variables.php',
+                        type: 'POST',
+                        data: { tabla: tablaSeleccionada },
+                        success: function (response) {
+                            // Llenar el desplegable de variables con la respuesta
+                            $('#variable').html(response);
+                            $('#variable').prop('disabled', false);
+                        }
+                    });
+                });
+            });
+        </script>
+        </select>
 
         <label for="valor">Valor:</label>
         <input type="text" id="valor" name="valor">
@@ -80,25 +101,6 @@
         <input type="submit" value="Buscar">
     </form>
 
-    <script>
-        $(document).ready(function () {
-            // Cuando cambie la selección de la tabla
-            $('#tabla').change(function () {
-                var tablaSeleccionada = $(this).val();
-
-                // Hacer una solicitud AJAX para obtener las variables de la tabla
-                $.ajax({
-                    url: 'get_variables.php',
-                    type: 'POST',
-                    data: { tabla: tablaSeleccionada },
-                    success: function (response) {
-                        // Llenar el desplegable de variables con la respuesta
-                        $('#variable').html(response);
-                        $('#variable').prop('disabled', false);
-                    }
-                });
-            });
-        });
-    </script>
+    
 </body>
 </html>
