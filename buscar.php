@@ -26,34 +26,6 @@
             });
         });
     </script>
-    <script>
-        document.getElementById("export-button").addEventListener("click", function () {
-        // Obtiene la tabla
-        const table = document.querySelector("table");
-
-        // Crea un objeto Blob con los datos de la tabla
-        const blob = new Blob([table.outerHTML], {
-        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8",
-        });
-
-        // Crea un objeto URL a partir del Blob
-        const url = URL.createObjectURL(blob);
-
-        // Crea un enlace de descarga
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = "tabla_excel.xlsx"; // Nombre del archivo Excel
-        document.body.appendChild(a);
-
-        // Simula un clic en el enlace para descargar el archivo
-        a.click();
-
-        // Limpia el objeto URL y elimina el enlace de descarga
-        URL.revokeObjectURL(url);
-        document.body.removeChild(a);
-        });
-    </script>
-
 </head>
 <body>
     <h1>Consulta de Tablas y Variables</h1>
@@ -158,5 +130,32 @@
 
         <input type="submit" value="Buscar">
     </form>
+    <script>
+        document.getElementById("export-button").addEventListener("click", function () {
+        // Obtiene la tabla
+        const table = document.querySelector("table");
+
+        // Crea un objeto Blob con los datos de la tabla
+        const blob = new Blob([table.outerHTML], {
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8",
+        });
+
+        // Crea un objeto URL a partir del Blob
+        const url = URL.createObjectURL(blob);
+
+        // Crea un enlace de descarga
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "tabla_excel.xlsx"; // Nombre del archivo Excel
+        document.body.appendChild(a);
+
+        // Simula un clic en el enlace para descargar el archivo
+        a.click();
+
+        // Limpia el objeto URL y elimina el enlace de descarga
+        URL.revokeObjectURL(url);
+        document.body.removeChild(a);
+        });
+    </script>
 </body>
 </html>
