@@ -104,6 +104,7 @@
         }        
 
         // Comienza la tabla HTML
+        echo "<div id='table-container'>";
         echo "<table border='1'>";
         echo "<tr>";
 
@@ -126,6 +127,7 @@
 
         // Cierra la tabla HTML
         echo "</table>";
+        echo "</div>";
         echo "<button id='export-button'>Exportar a Excel</button>";
         // Liberar recursos y cerrar la conexión
         pg_free_result($result);
