@@ -48,7 +48,7 @@
 
 
     <!-- Agrega un formulario para ingresar el Código de Población -->
-    <form action="buscar.php" method="post">
+    <form action="procesar_busqueda.php" method="post">
         <label for="tabla">Selecciona una tabla:</label>
         <select id="tabla" name="tabla">
             <option value="article">Artículo</option>
@@ -65,7 +65,7 @@
         <select id="variable" name="variable" disabled></select>
 
         <label for="valor">Valor:</label>
-        <input type="text" id="valor" name="valor">
+        <input type="submit" value="Buscar">
 
         <input type="submit" value="Buscar">
     </form>
