@@ -43,12 +43,34 @@
         $tabla = $_POST["tabla"];
         $variable = $_POST["variable"];
         $valor = $_POST["valor"];
+    
+        // Realizar la consulta con los datos ingresados
+        $query = "SELECT * FROM $tabla WHERE $variable = '$valor'";
+    
+        $result = pg_query($conn, $query);
+    
+        if (!$result) {
+            echo "Error en la consulta";
+            exit;
         }
+    
+        // Procesa los resultados y muestra los datos
+        while ($row = pg_fetch_assoc($result)) {
+            // Aquí puedes mostrar los datos de cada fila como desees
+            echo "ID: " . $row["id"] . "<br>";
+            echo "Nombre: " . $row["nombre"] . "<br>";
+            // ... continúa con otras columnas ...
+        }
+    
+        // Liberar recursos y cerrar la conexión
+        pg_free_result($result);
+        pg_close($conn);
+    }
     ?>
 
 
     <!-- Agrega un formulario para ingresar el Código de Población -->
-    <form action="procesar_busqueda.php" method="post">
+    <form action="buscar.php" method="post">
         <label for="tabla">Selecciona una tabla:</label>
         <select id="tabla" name="tabla">
             <option value="article">Artículo</option>
