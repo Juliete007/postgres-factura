@@ -64,3 +64,10 @@ input[type="submit"] {
 #export-button {
     text-align: center;
 }
+
+#export-button img {
+    width: 100px; /* Ajusta el tamaño a tu preferencia */
+    height: auto; /* Para mantener la proporción de la imagen */
+    display: block; /* Esto ayuda a centrar la imagen horizontalmente */
+    margin: 0 auto; /* Esto también ayuda a centrar la imagen horizontalmente */
+}
