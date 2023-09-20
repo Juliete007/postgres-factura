@@ -1,4 +1,12 @@
 <?php
+// Conexión a la base de datos PostgreSQL
+$conn = pg_connect("host=bnk6mxyzwg04dorrxsyk-postgresql.services.clever-cloud.com dbname=bnk6mxyzwg04dorrxsyk user=ughuuywkcfgjimu2goew password=yyXzddi5XIINcOBBpVCQxOCz2Wlvc0");
+
+if (!$conn) {
+    echo "<option value=''>Error: No se pudo conectar a la base de datos</option>";
+    exit;
+}
+
 // Obtener la tabla seleccionada del POST
 $tablaSeleccionada = $_POST['tabla'];
 
