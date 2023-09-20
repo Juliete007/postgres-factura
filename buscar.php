@@ -53,13 +53,30 @@
             echo "Error en la consulta";
             exit;
         }
-        echo "<tr><th>Númerod de la factura</th><th>Número de linia de la factura</th><th>Código de artículo</th><th>Cantidad</th><th>Precio</th><th>Descuento</th></tr>";
-        // Procesa los resultados y muestra los datos
-        while ($row = pg_fetch_assoc($result)) {
-            // Aquí puedes mostrar los datos de cada fila como desees
-            echo "<tr><td>" . $row["num_f"] . "</td><td>" . $row["num_l"] . "</td><td>" . $row["cod_a"] . "</td><td>" . $row["quant"] . "</td><td>" . $row["preu"] . "</td><td>" . $row["dte"] . "</td></tr>";
-            // ... continúa con otras columnas ...
+
+        // Comienza la tabla HTML
+        echo "<table border='1'>";
+        echo "<tr>";
+
+        // Obtén el nombre de las columnas y crea las cabeceras de la tabla
+        $numFields = pg_num_fields($result);
+        for ($i = 0; $i < $numFields; $i++) {
+            echo "<th>" . pg_field_name($result, $i) . "</th>";
         }
+
+        echo "</tr>";
+
+        // Muestra los resultados de la consulta en la tabla
+        while ($row = pg_fetch_assoc($result)) {
+            echo "<tr>";
+            foreach ($row as $value) {
+                echo "<td>" . $value . "</td>";
+            }
+            echo "</tr>";
+        }
+
+        // Cierra la tabla HTML
+        echo "</table>";
     
         // Liberar recursos y cerrar la conexión
         pg_free_result($result);
